@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redoHomework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            position: relative;
+            font-size: 0;
+            background: linear-gradient(transparent 85%, rgba(0, 0, 0, 0.5));
+        }
+
+        .box {
+            width: 200px;
+            display: inline-block;
+            position: relative;
+            margin-top: 100px;
+            padding: 10px;
+            border: 0.2px solid rgba(204, 200, 200, 0.3);
+            box-shadow: 0 2px 0 0px rgba(204, 200, 200, 0.3);
+            cursor: pointer;
+            -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+            font-size: 1rem;
+        }
+
+        .shadow-right {
+            background: linear-gradient(to right, white 90%, rgb(204, 200, 200) 125%);
+        }
+
+        .shadow-left {
+            background: linear-gradient(to left, white 90%, rgb(204, 200, 200) 125%);
+        }
+
+        .shadow-both {
+            background: linear-gradient(to right, rgb(204, 200, 200) -25%, white 10%, white 90%, rgb(204, 200, 200) 125%);
+        }
+
+        img {
+            border-radius: 50%;
+            margin-top: 40px;
+        }
+
+        p {
+            text-align: left;
+            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+        .click_btn {
+            display: inline-block;
+            text-align: right;
+            color: burlywood;
+            border-bottom: 1px solid burlywood;
+        }
+
+
+        /** box1 **/
+        .move_bigger:hover {
+            position: relative;
+            z-index: 1;
+            animation: moveBigger 5s;
+        }
+
+        @keyframes moveBigger {
+            0% {
+
+                transform: scale(1) translateX(0px);
+
+            }
+
+            50% {
+
+                transform: scale(1.5) translate(150px, 50px);
+
+            }
+
+            100% {
+
+                transform: scale(1) translate(0px);
+
+            }
+        }
+
+        /** box2 **/
+
+        /* 上邊 */
+        .sideTop {
+            position: absolute;
+        }
+
+        .sideTop:hover :nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 10px;
+            background: linear-gradient(90deg, #03f40f, #03f40f);
+            animation: neonTop 5s forwards;
+        }
+
+        @keyframes neonTop {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* 右邊 */
+        .sideRight {
+            position: absolute;
+        }
+
+        .sideRight:hover :nth-child(2) {
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 0;
+            background: linear-gradient(180deg, #03f40f, #03f40f);
+            animation: neonRight 5s forwards;
+        }
+
+        @keyframes neonRight {
+            0% {
+                height: 0;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+        /* 下邊 */
+        .sideBottom {
+            position: absolute;
+        }
+
+        .sideBottom:hover :nth-child(3) {
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 10px;
+            background: linear-gradient(270deg, #03f40f, #03f40f);
+            animation: neonBottom 5s forwards;
+        }
+
+        @keyframes neonBottom {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* 左邊 */
+        .sideLeft {
+            position: absolute;
+        }
+
+        .sideLeft:hover :nth-child(4) {
+            bottom: 0;
+            left: 0;
+            width: 10px;
+            height: 0;
+            background: linear-gradient(360deg, #03f40f, #03f40f);
+            animation: neonLeft 5s forwards;
+        }
+
+        @keyframes neonLeft {
+            0% {
+                height: 0;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+
+        /** box3 **/
+        .turn_round:hover {
+            animation: turnRound 5s forwards;
+        }
+
+        @keyframes turnRound {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* box4 */
+        .move_in:hover {
+            position: relative;
+            z-index: 2;
+            animation: movein 10s infinite;
+        }
+
+        @keyframes movein {
+            0% {
+                opacity: 0;
+                transform: scale(1) translateX(0px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5) translate(-150px, 50px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1) translateX(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="box shadow-right  move_bigger">
+            <img src="https://picsum.photos/100/100/?random=1">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias odit labore ab quia tempore beatae.</p>
+            <div class="click_btn">Click</div>
+        </div>
+        <div class="box shadow-both">
+            <img src="https://picsum.photos/100/100/?random=2">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias odit labore ab quia tempore beatae.</p>
+            <span class="sideTop"></span>
+            <span class="sideRight"></span>
+            <span class="sideBottom"></span>
+            <span class="sideLeft"></span>
+            <div class="click_btn">Click</div>
+        </div>
+        <div class="box shadow-both turn_round">
+            <img src="https://picsum.photos/100/100/?random=3">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias odit labore ab quia tempore beatae.</p>
+            <div class="click_btn">Click</div>
+        </div>
+        <div class="box shadow-left move_in">
+            <img src="https://picsum.photos/100/100/?random=4">
+            <p class="sliding">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias odit labore ab quia
+                tempore beatae.</p>
+            <div class="click_btn">Click</div>
+        </div>
+    </section>
+</body>
+
+</html>
